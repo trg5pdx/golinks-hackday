@@ -13,16 +13,11 @@ const List = () => {
   const formatData = (data) => {
     const repos = data.map((repo, key) => <RepoItem repo={repo} key={key} />);
 
-    repos.sort((a, b) => {
-      console.log(a.stargazers_count);
-      if (a.stargazers_count > b.stargazers_count) {
-        return 1;
-      } else if (a.stargazers_count < b.stargazers_count) {
-        return -1;
-      } else {
-        return 0;
-      }
-    });
+    console.log(repos);
+
+    repos.sort(
+      (a, b) => b.props.repo.stargazers_count - a.props.repo.stargazers_count
+    );
 
     return <div className="max-h-[500px] overflow-scroll p-10">{repos}</div>;
   };

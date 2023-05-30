@@ -13,19 +13,21 @@ const RepoItem = (data) => {
   });
 
   const formatCommitHistory = (data) => {
-    const list = data.map((commit, key) => {
-      <li key={key}>
+    const list = data.map((commit, key) => (
+      <ul className="rounded bg-slate-700 text-white" key={key}>
         Author: {commit.author.login}
         <br />
-        Date Created: {commit.author.date}
+        Date Created: {commit.commit.author.date}
         <br />
         Hash: {commit.sha}
         <br />
-        Commit Message: {commit.message}
-      </li>;
-    });
+        Commit Message: {commit.commit.message}
+        <br />
+        <br />
+      </ul>
+    ));
 
-    return <ul>{list}</ul>;
+    return <li className="h-5/6 overflow-scroll">{list}</li>;
   };
 
   useEffect(() => {
