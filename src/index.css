@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .card {
+    @apply m-2 bg-slate-700 p-2;
+  }
+  .modal {
+    transform: translate(-50%, -50%);
+    @apply absolute left-1/2 top-1/2 h-full w-full rounded bg-neutral-300 px-2 py-5 lg:h-1/2 lg:w-1/2;
+  }
+}

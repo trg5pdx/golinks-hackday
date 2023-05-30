@@ -1,7 +1,8 @@
-import { useState } from 'react';
+import { useState } from "react";
+import List from "./components/List";
 
 function App() {
-  const [search, setSearch] = useState('');
+  const [search, setSearch] = useState("");
 
   return (
     <div>
@@ -14,19 +15,20 @@ function App() {
                 Search for GitHub organization
               </label>
               <input
-                  value={search}
-                  onChange={(e) => setSearch(e.target.value)}
-                  type="text"
-                  className="form-control"
-                  id="githubOrgSearch"
-                  aria-describedby="githubOrgSearch"
-                  placeholder="Search for a GitHub Organization"
-                />
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+                type="text"
+                className="form-control"
+                id="githubOrgSearch"
+                aria-describedby="githubOrgSearch"
+                placeholder="Search for a GitHub Organization"
+              />
             </div>
             <button type="submit" className="btn btn-primary">
               Search
             </button>
           </form>
+          <List />
         </div>
       </div>
     </div>
