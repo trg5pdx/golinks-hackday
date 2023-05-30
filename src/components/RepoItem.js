@@ -27,6 +27,8 @@ const RepoItem = (data) => {
       </ul>
     ));
 
+    console.log(list);
+
     return <li className="h-5/6 overflow-scroll">{list}</li>;
   };
 
@@ -45,6 +47,7 @@ const RepoItem = (data) => {
           setLoading(false);
           const history = formatCommitHistory(response.data);
           setCommitHistory(history);
+          setSelectedRepo(null);
           console.log(commitHistory);
         })
         .catch((error) => console.log(error));
